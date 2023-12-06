@@ -1,0 +1,13 @@
+/* ButtonList.css */
+.hide-scrollbar {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0.5em; /* Adjust as needed */
+}
+
+.hide-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
