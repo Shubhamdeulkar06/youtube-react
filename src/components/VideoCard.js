@@ -12,10 +12,10 @@ const VideoCard = ({ info }) => {
         alt="thumbnail"
       />
       <ul>
-        <li className="font-bold py-2">{channelTitle}</li>
-        <li className="whitespace-nowrap overflow-hidden text-ellipsis">
+        <li className="whitespace-nowrap overflow-hidden text-ellipsis font-bold py-2">
           {title}
         </li>
+        <li className="text-md">{channelTitle}</li>
         <li>{statistics.viewCount} Views</li>
       </ul>
     </div>

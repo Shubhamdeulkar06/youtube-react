@@ -4,3 +4,6 @@ const YOUTUBE_VIDEO_API =
   GOOGLE_API_KEY;
 
 export default YOUTUBE_VIDEO_API;
+
+export const YOUTUBE_SEARCH_API =
+  "https://corsproxy.io?http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&client=firefox&q=";
