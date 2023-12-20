@@ -8,7 +8,10 @@ const VideoCard = ({ info }) => {
     <div className="shadow-xl p-5 md:p-2 m-0 md:m-2 max-w-full md:w-[315px]">
       <img
         className="rounded-lg"
-        src={thumbnails?.maxres?.url}
+        src={
+          thumbnails?.maxres?.url ||
+          "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        }
         alt="thumbnail"
       />
       <ul>
