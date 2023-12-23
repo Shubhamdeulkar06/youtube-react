@@ -17,7 +17,12 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const searchCache = useSelector((store) => store.search);
-
+  const handleClick = (e) => {
+    const content = e.target.textContent; // Access the text content
+    // console.log(content);
+    setSearchQuery(content.trim());
+    setShowSuggestions(false);
+  };
   useEffect(() => {
     // api call after 200ms
     const timer = setTimeout(() => {
@@ -79,10 +84,12 @@ const Header = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setShowSuggestions(true)}
-              onBlur={() => setShowSuggestions(false)}
+              // onBlur={() => setShowSuggestions(false)}
+              // onMouseLeave={() => setShowSuggestions(false)}
             />
             <button className=" rounded-r-full border border-black p-2 bg-gray-300 border-l-0">
-              <img className="h-6" src={searchIcon} alt="search icon" />
+              {/* <img className="h-6" src={searchIcon} alt="search icon" /> */}
+              <FiSearch size={24} />
             </button>
           </div>
         </div>
@@ -91,6 +98,7 @@ const Header = () => {
         <div className=" md:hidden ">
           <div className="flex items-center w-full justify-end">
             <input
+              autoComplete="off"
               className=" w-[70%]"
               type="text"
               name="search"
@@ -99,7 +107,7 @@ const Header = () => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onFocus={() => setShowSuggestions(true)}
-              onBlur={() => setShowSuggestions(false)}
+              // onBlur={() => setShowSuggestions(false)}
             />
 
             <button>
@@ -118,7 +126,8 @@ const Header = () => {
             {suggestions.map((suggestion) => (
               <li
                 key={suggestion}
-                className="flex gap-3 items-center px-5 py-1 shadow-sm hover:bg-gray-400 "
+                className="flex gap-3 items-center px-5 py-1 shadow-sm hover:bg-gray-400 cursor-default"
+                onClick={handleClick}
               >
                 <FiSearch /> <span>{suggestion}</span>
               </li>
