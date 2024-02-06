@@ -7,6 +7,12 @@ export const OFFSET_LIVE_CHAT = 20;
 
 export default YOUTUBE_VIDEO_API;
 
-export const YOUTUBE_SEARCH_API =
-  "http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&client=firefox&q=";
+// export const YOUTUBE_SEARCH_API =
+//   "http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&client=firefox&q=";
 //https://corsproxy.io?
+
+export const YOUTUBE_SEARCH_API =
+  "https://corsproxy.org/?" +
+  encodeURIComponent(
+    "http://suggestqueries.google.com/complete/search?client=youtube&ds=yt&client=firefox&q="
+  );
